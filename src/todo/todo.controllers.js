@@ -26,7 +26,7 @@ const todoDB = [
     description: '',
     completed: false
     }
-  */
+*/
 
 const getAllMyTodos = () => {
   return todoDB;
@@ -68,11 +68,11 @@ const deleteTodoItem = (id) => {
 
 const updateTodoItem = (id, data) => {
   const index = todoDB.findIndex((item) => item.id === id);
-  if (data.title && data.description && data.completed) {
+  if (data.completed !== undefined) {
     todoDB[index] = {
       id,
-      title: data.title,
-      description: data.description,
+      title: todoDB[index].title,
+      description: todoDB[index].description,
       completed: data.completed
     };
     return todoDB[index]
